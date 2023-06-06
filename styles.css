@@ -336,7 +336,7 @@ label {
 } */
 
 
-#dob {
+.date_ob input {
     padding: 0.45rem 0.9rem;
     border: 1px solid rgba(12, 0, 3, 0.527);
     background: transparent;
@@ -352,7 +352,6 @@ label {
 }
 
 #idType,
-#dob,
 #sex,
 input::placeholder {
     font-family: 'Montserrat', sans-serif;
