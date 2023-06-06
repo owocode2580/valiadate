@@ -27,22 +27,24 @@
 
                 <div class="nav-container">
                     <nav class="navbar container">
-                      <div class="navbar-overlay"></div>
-                      <button type="button" class="navbar-burger">
-                        <span class="material-icons">menu</span>
-                      </button>
-                      <div class="navbar-title">
-                        <a href="/"><img src="/assets/aoc_logo.png" alt="logo">AUSTAL</a>
-                      </div>
-                      <nav class="navbar-menu">
-                        <a type="button" class="button" href="/">Home</a>
-                        <a type="button" class="button" href="#about">About</a>
-                        <a type="button" class="button" href="#contact">Contact</a>
-                        <a type="button" class="button btn_form" href="#form_col">JOIN US</a>
-                      </nav>
+                        <div class="navbar-overlay"></div>
+                        <button type="button" class="navbar-burger">
+                            <span class="material-icons">menu</span>
+                        </button>
+                        <div class="navbar-title">
+                            <a href="/"><img src="/assets/aoc_logo.png" alt="logo">AUSTAL</a>
+                        </div>
+                        <div class="navbar-menu">
+                            <a type="button" class="button" href="/">Home</a>
+                            <a type="button" class="button" href="#about">About</a>
+                            <a type="button" class="button" href="#contact">Contact</a>
+
+                            <a type="button" class="button btn_form" href="#form_col">JOIN US</a>
+                        </div>
+
                     </nav>
-                  </div>
-                  
+                </div>
+
 
                 <div class="header_col_text container">
                     <img src="/assets/aco_main.png" alt="austal">
@@ -114,76 +116,101 @@
                     <div class="form_col_main">
                         <form id="myForm" class="">
                             <div class="form-group">
-                                <label for="firstName">FIRST NAME:</label>
+                                <label for="firstName">FIRST NAME</label>
                                 <input type="text" id="firstName" placeholder="Enter your first name" required>
                                 <div class="validfirstname-feedback valid_color">Looks great ✔</div>
                                 <div class="invalidfirstname-feedback invalid_color">Please fill out this field.</div>
                             </div>
 
                             <div class="form-group">
-                                <label for="lastName">LAST NAME:</label>
+                                <label for="lastName">LAST NAME</label>
                                 <input type="text" id="lastName" placeholder="Enter your last name" required>
                                 <div class="validlastname-feedback valid_color">Looks great ✔</div>
                                 <div class="invalidlastname-feedback invalid_color">Please fill out this field.</div>
                             </div>
 
                             <div class="form-group">
-                                <label for="email">EMAIL:</label>
+                                <label for="email">EMAIL</label>
                                 <input type="email" id="email" placeholder="Enter your email" required>
                                 <div class="validemail-feedback valid_color">Looks great ✔</div>
                                 <div class="invalidemail-feedback invalid_color">Please fill out this field.</div>
                             </div>
 
                             <div class="form-group">
-                                <label for="phone">PHONE:</label>
+                                <label for="phone">PHONE</label>
                                 <input type="text" id="phone" placeholder="e.g +1 234 5697 890 " required>
                                 <div class="validphone-feedback valid_color">Looks great ✔</div>
                                 <div class="invalidphone-feedback invalid_color">Please fill out this field.</div>
                             </div>
 
                             <div class="form-group date_ob">
-                                <label for="dob">DATE OF BIRTH:</label>
+                                <label for="dob">DATE OF BIRTH</label>
                                 <input type="date" id="dob" required>
-                                <div class="validDOB-feedback valid_color">Looks great ✔</div>
-                                <div class="invalidDOB-feedback invalid_color">Please fill out this field.</div>
+                                <div class="validDOB-feedback valid_color">
+                                    Looks great ✔
+                                </div>
+                                <div class="invalidDOB-feedback invalid_color">
+                                    Please fill out this field.
+                                </div>
                             </div>
 
+
+
                             <div class="form-group">
-                                <label for="sex">SEX:</label>
-                                <select id="sex" required>
-                                    <option class="option_key" value="">Select Sex</option>
-                                    <option class="option_key" value="male">Male</option>
-                                    <option class="option_key" value="female">Female</option>
-                                </select>
-                                <div class="validSex-feedback valid_color invalid_color">Please fill out this field.
+                                <label for="sex">SEX</label>
+                                <div class="custom-select">
+                                    <select id="sex" required>
+                                        <option class="option_key" value="" selected disabled>Select Sex</option>
+                                        <option class="option_key" value="male">Male</option>
+                                        <option class="option_key" value="female">Female</option>
+                                    </select>
+                                    <span class="custom-select-icon">▼</span>
+                                </div>
+                                <div class="validSex-feedback valid_color">
+                                    Got it ❤
+                                </div>
+                                <div class="invalidSex-feedback">
+                                    Please fill out this field.
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="idType">ID:</label>
-                                <select id="idType" required>
-                                    <option class="option_key" value="">Choose ID</option>
-                                    <option class="option_key" value="1">Driver License Front and Back</option>
-                                    <option class="option_key" value="2">State ID Front and Back</option>
-                                </select>
-                                <div class="validID-feedback valid_color">You are almost there 👍</div>
-                                <div class="invalidID-feedback invalid_color">Please fill out this field.</div>
+                                <label for="idType">ID</label>
+                                <div class="custom-select">
+                                    <select id="idType" required>
+                                        <option class="option_key" value="">Choose ID</option>
+                                        <option class="option_key" value="1">Driver License Front and Back</option>
+                                        <option class="option_key" value="2">State ID Front and Back</option>
+                                    </select>
+                                    <span class="custom-select-icon">▼</span>
+                                </div>
+                                <div class="validID-feedback valid_color">
+                                    You are almost there 👍
+                                </div>
+                                <div class="invalidID-feedback invalid_color">
+                                    Please fill out this field.
+                                </div>
                             </div>
 
                             <div class="form-group additional-file-upload">
-                                <label for="frontPicture">Upload Front Picture:</label>
+                                <label for="frontPicture">Upload Front Picture</label>
                                 <input type="file" id="frontPicture" class="file-upload" accept="image/*" required>
-                                <div class="valid-file-feedback valid_color">Front picture uploaded successfully.</div>
-                                <div class="invalid-file-feedback invalid_color">Please upload a clear picture (not more
-                                    than 15MB).</div>
+                                <div class="valid-file-feedback valid_color">
+                                    Front picture uploaded successfully.</div>
+                                <div class="invalid-file-feedback invalid_color">
+                                    Please upload a clear picture (not morethan 15MB).
+                                </div>
                             </div>
 
                             <div class="form-group additional-file-upload">
-                                <label for="backPicture">Upload Back Picture:</label>
+                                <label for="backPicture">Upload Back Picture</label>
                                 <input type="file" id="backPicture" class="file-upload" accept="image/*" required>
-                                <div class="valid-file-feedback valid_color">Back picture uploaded successfully.</div>
-                                <div class="invalid-file-feedback invalid_color">Please upload a clear picture (not more
-                                    than 15MB).</div>
+                                <div class="valid-file-feedback valid_color">
+                                    Back picture uploaded successfully.
+                                </div>
+                                <div class="invalid-file-feedback invalid_color">
+                                    Please upload a clear picture (not more than 15MB).
+                                </div>
                             </div>
 
                             <div class="form-group-button">

@@ -13,7 +13,6 @@
 
 .nav-container {
     background-color: var(--navbarbgr);
-    position: fixed;
     width: 100%;
     z-index: 500;
 }
@@ -71,7 +70,8 @@ h3 {
 }
 
 .navbar {
-    z-index: 400;
+    position: fixed;
+    z-index: 500;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,10 +133,10 @@ body.open .navbar-overlay {
     z-index: 500;
     top: 0;
     right: 0;
-    translate: -100% 0;
+    transform: translate(-100% 0);
     width: 310px;
     height: 100%;
-    padding: 100px;
+    padding: 20px;
     display: flex;
     gap: 12px;
     flex-direction: column;
@@ -176,7 +176,7 @@ body.open .navbar-menu {
     position: relative;
     display: flex;
     justify-content: center;
-    padding: 7rem 0rem;
+    padding: 10rem 0rem;
 }
 
 .header_col_text img {
@@ -324,6 +324,81 @@ label {
     border-radius: 3px;
 }
 
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.custom-select-icon {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Additional Styles (Optional) */
+
+.custom-select select:focus {
+    outline: none;
+    border-color: #5b9dd9;
+}
+
+.validDOB-feedback,
+.invalidDOB-feedback,
+.validSex-feedback {
+    display: none;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.validDOB-feedback.valid_color,
+.validSex-feedback.valid_color {
+    color: green;
+}
+
+.invalidDOB-feedback.invalid_color,
+.validSex-feedback.invalid_color {
+    color: red;
+}
+
+/* .date-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.date-input-container input[type="text"] {
+    padding-right: 25px;
+}
+
+.date-input-container .calendar-icon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+.date-input-container .calendar-icon i {
+    color: #999;
+} */
+
+/* Adjust the styling of the calendar icon as needed */
+
+
+
 /* #idType:valid,
 #sex:valid,
 .form-group input:valid {
@@ -337,7 +412,7 @@ label {
 
 
 .date_ob input {
-    padding: 0.45rem 0.9rem;
+    padding: 0.5rem 1rem;
     border: 1px solid rgba(12, 0, 3, 0.527);
     background: transparent;
     border-radius: 3px;
@@ -345,7 +420,7 @@ label {
 
 #idType,
 #sex {
-    padding: 0.55rem 0.9rem;
+    padding: 0.55rem 1rem;
     background: transparent;
     border: 1px solid rgba(12, 0, 3, 0.527);
     border-radius: 3px;
@@ -450,36 +525,45 @@ footer {
 
 .fade-color {
     animation: fade 1.5s infinite;
-  }
-  
-  @keyframes fade {
-    0% { background-color: initial; }
-    50% { background-color: rgba(255, 0, 0, 0.3); }
-    100% { background-color: initial; }
-  }
-  
-  .invalid-input {
+}
+
+@keyframes fade {
+    0% {
+        background-color: initial;
+    }
+
+    50% {
+        background-color: rgba(255, 0, 0, 0.3);
+    }
+
+    100% {
+        background-color: initial;
+    }
+}
+
+.invalid-input {
     border: 1px solid red;
-  }
-  
-  .invalid-border {
+}
+
+.invalid-border {
     border: 1px solid red !important;
-  }
-  
-  .valid-feedback, .invalid-feedback {
+}
+
+.valid-feedback,
+.invalid-feedback {
     display: none;
-  }
-  
-  .image-preview {
+}
+
+.image-preview {
     max-width: 100%;
     height: auto;
     margin-top: 10px;
-  }
-  
-  .image-fluid {
+}
+
+.image-fluid {
     max-width: 100%;
     height: auto;
-  }  
+}
 
 
 .subscribeFormDiv button:focus {
@@ -520,33 +604,35 @@ footer {
 
 .fade-color {
     animation: fade 1.5s infinite;
-  }
-  
-  @keyframes fade {
+}
+
+@keyframes fade {
     0% {
-      background-color: initial;
+        background-color: initial;
     }
+
     50% {
-      background-color: rgba(255, 0, 0, 0.3);
+        background-color: rgba(255, 0, 0, 0.3);
     }
+
     100% {
-      background-color: initial;
+        background-color: initial;
     }
-  }
-  
-  .invalid-input {
+}
+
+.invalid-input {
     border: 1px solid red;
-  }
-  
-  .invalid-border {
+}
+
+.invalid-border {
     border: 1px solid red !important;
-  }
-  
-  .valid-feedback,
-  .invalid-feedback {
+}
+
+.valid-feedback,
+.invalid-feedback {
     display: none;
-  }
-  
+}
+
 
 
 @media only screen and (min-width: 768px) {
