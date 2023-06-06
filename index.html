@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>AUSTRAL </title>
+</head>
+
+<body>
+    <div class="austal_work">
+
+        <header>
+            <div class="header_col">
+
+                <div class="nav-container">
+                    <nav class="navbar container">
+                      <div class="navbar-overlay"></div>
+                      <button type="button" class="navbar-burger">
+                        <span class="material-icons">menu</span>
+                      </button>
+                      <div class="navbar-title">
+                        <a href="/"><img src="/assets/aoc_logo.png" alt="logo">AUSTAL</a>
+                      </div>
+                      <nav class="navbar-menu">
+                        <a type="button" class="button" href="/">Home</a>
+                        <a type="button" class="button" href="#about">About</a>
+                        <a type="button" class="button" href="#contact">Contact</a>
+                        <a type="button" class="button btn_form" href="#form_col">JOIN US</a>
+                      </nav>
+                    </nav>
+                  </div>
+                  
+
+                <div class="header_col_text container">
+                    <img src="/assets/aco_main.png" alt="austal">
+                    <h1>
+                        AUSTAL CHARITY ORGANIZATION
+                    </h1>
+                    <a href="#subscribe">
+                        Subscribe to our news letter
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <div class="main_col container" id="main_col">
+
+
+                <div class="about_col" id="about">
+                    <h3>About Us</h3>
+                    <p>
+                        Our charity organization is dedicated to making a positive impact in the communities we serve.
+                        With a passion for helping others, we strive to address pressing social issues and provide
+                        assistance to those in need. Through collaborative efforts and community engagement, we aim to
+                        create sustainable solutions and uplift individuals and families facing adversity. <br> <br>
+
+                        At our core, we believe in fostering compassion, empathy, and inclusivity. Our programs and
+                        initiatives focus on various areas, including education, healthcare, poverty alleviation, and
+                        environmental conservation. By partnering with local stakeholders, volunteers, and donors, we
+                        work towards building resilient communities and empowering individuals to reach their full
+                        potential. <br> <br>
+
+                        With a commitment to transparency and accountability, we ensure that every donation and resource
+                        entrusted to us is used effectively to bring about meaningful change. Together, we can create a
+                        brighter future and inspire hope in the lives of those we serve. <br> <br>
+
+                        Join us in our mission to transform lives and contribute to the betterment of society. Together,
+                        we can make a lasting difference. <br>
+                    </p>
+                </div>
+
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/assets/charity_five.jpg" class="d-block w-100 img-fluid" alt="austal">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/charity_four.jpg" class="d-block w-100 img-fluid" alt="austal">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/charity_one.jpeg" class="d-block w-100 img-fluid" alt="austal">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/charity_three.jpg" class="d-block w-100 img-fluid" alt="austal">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/assets/charity_two.jpg" class="d-block w-100 img-fluid" alt="austal">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form_col" id="form_col">
+                    <div class="form_col_header">
+                        <P>You want to help a community and you do not know how to start?</P>
+                        <h2>JOIN US NOW!</h2>
+                    </div>
+
+                    <div class="form_col_main">
+                        <form id="myForm" class="">
+                            <div class="form-group">
+                                <label for="firstName">FIRST NAME:</label>
+                                <input type="text" id="firstName" placeholder="Enter your first name" required>
+                                <div class="validfirstname-feedback valid_color">Looks great ✔</div>
+                                <div class="invalidfirstname-feedback invalid_color">Please fill out this field.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">LAST NAME:</label>
+                                <input type="text" id="lastName" placeholder="Enter your last name" required>
+                                <div class="validlastname-feedback valid_color">Looks great ✔</div>
+                                <div class="invalidlastname-feedback invalid_color">Please fill out this field.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">EMAIL:</label>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                                <div class="validemail-feedback valid_color">Looks great ✔</div>
+                                <div class="invalidemail-feedback invalid_color">Please fill out this field.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">PHONE:</label>
+                                <input type="text" id="phone" placeholder="e.g +1 234 5697 890 " required>
+                                <div class="validphone-feedback valid_color">Looks great ✔</div>
+                                <div class="invalidphone-feedback invalid_color">Please fill out this field.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dob">DATE OF BIRTH:</label>
+                                <input type="date" id="dob" required>
+                                <div class="validDOB-feedback valid_color">Looks great ✔</div>
+                                <div class="invalidDOB-feedback invalid_color">Please fill out this field.</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sex">SEX:</label>
+                                <select id="sex" required>
+                                    <option class="option_key" value="">Select Sex</option>
+                                    <option class="option_key" value="male">Male</option>
+                                    <option class="option_key" value="female">Female</option>
+                                </select>
+                                <div class="validSex-feedback valid_color invalid_color">Please fill out this field.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="idType">ID:</label>
+                                <select id="idType" required>
+                                    <option class="option_key" value="">Choose ID</option>
+                                    <option class="option_key" value="1">Driver License Front and Back</option>
+                                    <option class="option_key" value="2">State ID Front and Back</option>
+                                </select>
+                                <div class="validID-feedback valid_color">You are almost there 👍</div>
+                                <div class="invalidID-feedback invalid_color">Please fill out this field.</div>
+                            </div>
+
+                            <div class="form-group additional-file-upload">
+                                <label for="frontPicture">Upload Front Picture:</label>
+                                <input type="file" id="frontPicture" class="file-upload" accept="image/*" required>
+                                <div class="valid-file-feedback valid_color">Front picture uploaded successfully.</div>
+                                <div class="invalid-file-feedback invalid_color">Please upload a clear picture (not more
+                                    than 15MB).</div>
+                            </div>
+
+                            <div class="form-group additional-file-upload">
+                                <label for="backPicture">Upload Back Picture:</label>
+                                <input type="file" id="backPicture" class="file-upload" accept="image/*" required>
+                                <div class="valid-file-feedback valid_color">Back picture uploaded successfully.</div>
+                                <div class="invalid-file-feedback invalid_color">Please upload a clear picture (not more
+                                    than 15MB).</div>
+                            </div>
+
+                            <div class="form-group-button">
+                                <button type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer id="contact">
+            <div class="footer_col container">
+
+                <div class="subscribe_col" id="subscribe">
+                    <p>
+                        Get more insights about Austal Charity Organization and our impact in the communities we serve.
+                        Once per month. No spam, ever!
+                    </p>
+
+                    <form id="subscribeForm">
+                        <div class="subscribeFormDiv">
+                            <input type="email" id="emailSubscribe" placeholder="Enter your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <div id="subscribeResponseMessage"></div>
+                </div>
+
+                <div class="icons">
+                    <i class="bi bi-twitter"></i>
+                    <i class="bi bi-envelope-fill"></i>
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-linkedin"></i>
+                </div>
+
+                <div class="copyright">
+                    <span>© 2023 AUSTAL CHARITY ORGANIZATION.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script type="text/javascript" src="/main.js"></script>
+    <script type="text/javascript" src="/form.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
