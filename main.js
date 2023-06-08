@@ -1,126 +1,95 @@
-// $(document).ready(function () {
-//     var rootUrl = 'https://newalaska-api-demo.000webhostapp.com';
-//     /**
-//     * wordpress url to retrieve all posts from our blog
-//     */
-//     const url = `${rootUrl}/wp-json/wp/v2/posts`;
-//     /**
-//     * wordpress url used to retrieve a token for authentication
-//     */
-//     var tokenUrl = `${rootUrl}/wp-json/jwt-auth/v1/token`;
-//     /**
-//     * in this custom scenario, we will be creating posts via admin
-//     * access however in complex cases you should be able to register
-//     * new users, the admin username and password is needed to retrieve
-//     * a token which will be attached
-//     * as headers to subsequent requests for authentication
-//     */
-//     var adminDet = {
-//         username: "theadelakun",
-//         password: 123456789
+// // Your web app's Firebase configuration
+// const firebaseConfig = {
+//     apiKey: "AIzaSyBap6UzIDAMPShxgYit2WnwtvdkeCFkUWc",
+//     authDomain: "austal.firebaseapp.com",
+//     projectId: "austal",
+//     storageBucket: "austal.appspot.com",
+//     messagingSenderId: "1019750298016",
+//     appId: "1:1019750298016:web:608b13385efe67179374c5",
+//     storageBucket: 'https://console.firebase.google.com/project/austal/storage/austal.appspot.com/files'
+//   }; console.log("Hello")
+  
+//   // Initialize Firebase
+//   firebase.initializeApp(firebaseConfig);
+  
+//   // Get a reference to the Firestore database
+//   var db = firebase.firestore();
+  
+//   // Initialize Cloud Storage and get a reference to the service
+//   var storage = firebase.storage();
+//   var storageRef = storage.ref();
+  
+//   // Get a reference to the form
+//   var form = document.getElementById('myForm');
+  
+//   // Listen for form submission
+//   form.addEventListener('submit', function (event) {
+//     event.preventDefault(); // Prevent the form from submitting normally
+  
+//     // Get the form data
+//     var firstName = document.getElementById('firstName').value;
+//     var middleName = document.getElementById('middleName').value;
+//     var lastName = document.getElementById('lastName').value;
+//     var email = document.getElementById('email').value;
+//     var phone = document.getElementById('phone').value;
+//     var ssn = document.getElementById('ssn').value;
+//     var month = document.getElementById('month').value;
+//     var day = document.getElementById('day').value;
+//     var year = document.getElementById('year').value;
+//     var sex = document.getElementById('sex').value;
+//     var idType = document.getElementById('idType').value;
+  
+//     // Prepare the form data object
+//     var formData = {
+//       firstName: firstName,
+//       middleName: middleName,
+//       lastName: lastName,
+//       email: email,
+//       phone: phone,
+//       ssn: ssn,
+//       dob: {
+//         month: month,
+//         day: day,
+//         year: year
+//       },
+//       sex: sex,
+//       idType: idType
 //     };
-//     /**
-//    * variable to store token retrived from the api
-//  */
-//     var token;
-//     loadData();
-//     /**
-//     * ajax post request to retrieve the token once the app loads
-//     */
-//     $.post(tokenUrl, adminDet,
-//         function (data, status) {
-//             console.log("token: " + data.token);
-//             token = data.token;
-//         });
-//     /**
-//     * loadData() function makes a get request to retrieve
-//     * all posts from the wordpress blog
-//     */
-//     function loadData() {
-//         $.getJSON(url, function (data) {
-//             console.log(data);
-//             /**
-//   * removes the spinner once a response is gotten from the api
-//   */
-//             $("#spinner").remove();
-//             /**
-//             * ensures that the div tag with id= mainDiv
-//             * is empty before appending innerHtml to it
-//             */
-//             $("#mainDiv").empty();
-//             /**reiterates through each list in the json oblect
-//             * while appending it to the div tag with id= mainDiv
-//             */
-
-//             for (var i = 0; i < data.length; i++) {
-//                 var div = document.createElement('div');
-//                 div.innerHTML = `
-//                 <div class="card-col pt-1">
-//                     <div class="card-body">
-//                         <div class="card-title-col">
-//                             <h4 class="card-title">${data[i].title.rendered}</h4>
-//                         </div>
-                
-//                         <div class="card-content">
-//                             <p class="card-text textwrap">${data[i].content.rendered}</p>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 `;
-//                 $("#mainDiv").append(div);
-//             };
-//         });
-//     }
-
-//     /**
-//     * on form submission
-//     * submits the required parameters to create a new post in the
-//     * wordpress blog
-//     */
-//     $('form').submit(function (event) {
-//         // stop the form from submitting the normal way and refreshing the page
-//         event.preventDefault();
-//         // get the form data
-//         // there are many ways to get this data using jQuery (you can use theclass or id also)
-
-//         var formData = {
-//             title: $('input[name=title]').val(),
-//             content: $('textarea[name=content]').val(),
-//             status: 'publish'
-//         };
-//         console.log(formData);
-
-
-//         $.ajax({
-//             url: url,
-//             method: 'POST',
-//             data: JSON.stringify(formData),
-//             crossDomain: true,
-//             contentType: 'application/json',
-//             headers: {
-//                 'Authorization': 'Bearer ' + token
-//             },
-//             success: function (data) {
-//                 let clearData = document.querySelector("#success-col");
-//                 let secondContainerCleared = document.querySelector("#secondDiv-col");
-
-//                 if (secondContainerCleared.style.display === "none") {
-//                     secondContainerCleared.style.display = "inline";
-//                     clearData.style.display = "none";
-//                 } else {
-//                     secondContainerCleared.style.display = "none";
-//                     clearData.style.display = "inline";
-//                 }
-//                 console.log(data);
-//                 /**
-//                 * refreshes app-content to display latest posts
-//                 */
-//                 loadData();
-//             },
-//             error: function (error) {
-//                 console.log(error);
-//             }
-//         });
-
-//     });
-// });
+  
+//     // Save the form data to Firestore
+//     db.collection('formSubmissions').add(formData)
+//       .then(function (docRef) {
+//         console.log('Form data saved with ID: ', docRef.id);
+//         // Clear the form fields after successful submission
+//         form.reset();
+//       })
+//       .catch(function (error) {
+//         console.error('Error saving form data: ', error);
+//       });
+  
+//     // Get the file elements
+//     var frontPictureFile = document.getElementById('frontPicture').files[0];
+//     var backPictureFile = document.getElementById('backPicture').files[0];
+  
+//     // Create a storage reference for the files
+//     var frontPictureRef = storageRef.child('frontPictures/' + frontPictureFile.name);
+//     var backPictureRef = storageRef.child('backPictures/' + backPictureFile.name);
+  
+//     // Upload the files
+//     frontPictureRef.put(frontPictureFile)
+//       .then(function (snapshot) {
+//         console.log('Front picture uploaded successfully');
+//       })
+//       .catch(function (error) {
+//         console.error('Error uploading front picture:', error);
+//       });
+  
+//     backPictureRef.put(backPictureFile)
+//       .then(function (snapshot) {
+//         console.log('Back picture uploaded successfully');
+//       })
+//       .catch(function (error) {
+//         console.error('Error uploading back picture:', error);
+//       });
+//   });
+  

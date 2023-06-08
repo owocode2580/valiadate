@@ -16,7 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Poppins:wght@400;500;700&display=swap"
         rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <title>AUSTRAL </title>
+    <title>AUSTAL </title>
 </head>
 
 <body>
@@ -32,7 +32,9 @@
                             <span class="material-icons">menu</span>
                         </button>
                         <div class="navbar-title">
-                            <a href="/"><img src="/assets/aoc_logo.png" alt="logo">AUSTAL</a>
+                            <a href="/"><img src="/assets/austal_logo_bg.png" alt="logo">
+                                <p class="logo_pg">AUSTAL</p><span class="logo_span">USA</span>
+                            </a>
                         </div>
                         <div class="navbar-menu">
                             <a type="button" class="button" href="/">Home</a>
@@ -46,14 +48,16 @@
                 </div>
 
 
-                <div class="header_col_text container">
-                    <img src="/assets/aco_main.png" alt="austal">
-                    <h1>
-                        AUSTAL CHARITY ORGANIZATION
-                    </h1>
-                    <a href="#subscribe">
-                        Subscribe to our news letter
-                    </a>
+                <div class="header-text-container">
+                    <div class="header_col_text container">
+                        <img src="/assets/aco_main.png" alt="austal">
+                        <h1>
+                            AUSTAL CHARITY ORGANIZATION
+                        </h1>
+                        <a href="#subscribe">
+                            Subscribe to our news letter
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -114,52 +118,147 @@
                     </div>
 
                     <div class="form_col_main">
+                        <div class="form_info">
+                            <p>
+                                Fill out the form carefully for registeration
+                            </p>
+                        </div>
                         <form id="myForm" class="">
-                            <div class="form-group">
-                                <label for="firstName">FIRST NAME</label>
-                                <input type="text" id="firstName" placeholder="Enter your first name" required>
-                                <div class="validfirstname-feedback valid_color">Looks great ✔</div>
-                                <div class="invalidfirstname-feedback invalid_color">Please fill out this field.</div>
+
+                            <div class="form-group for_name">
+                                <label class="label_title" for="email">
+                                    NAME*
+                                </label>
+                                <div class="for_names_div">
+                                    <div class="for_firstname  for_name_col">
+                                        <input type="text" name="firstName" id="firstName" required>
+                                        <label for="firstName">First Name</label>
+                                        <div class="invalidfirstname-feedback invalid_color">
+                                            Please fill out this field.
+                                        </div>
+                                    </div>
+
+                                    <div class="for_midddlename for_name_col">
+                                        <input type="text" name="middleName" id="middleName">
+                                        <label for="middleName">Middle Name</label>
+                                    </div>
+
+                                    <div class="for_lastname for_name_col">
+                                        <input type="text" name="lastName" id="lastName" required>
+                                        <label for="lastName">Last Name</label>
+                                        <div class="validlastname-feedback valid_color">Looks great ✔</div>
+                                        <div class="invalidlastname-feedback invalid_color">
+                                            Please fill out this field.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="lastName">LAST NAME</label>
-                                <input type="text" id="lastName" placeholder="Enter your last name" required>
-                                <div class="validlastname-feedback valid_color">Looks great ✔</div>
-                                <div class="invalidlastname-feedback invalid_color">Please fill out this field.</div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">EMAIL</label>
-                                <input type="email" id="email" placeholder="Enter your email" required>
+                                <label class="label_title" for="email">
+                                    EMAIL*
+                                </label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
                                 <div class="validemail-feedback valid_color">Looks great ✔</div>
-                                <div class="invalidemail-feedback invalid_color">Please fill out this field.</div>
+                                <div class="invalidemail-feedback invalid_color">Please enter a valid email.</div>
                             </div>
 
                             <div class="form-group">
-                                <label for="phone">PHONE</label>
-                                <input type="text" id="phone" placeholder="e.g +1 234 5697 890 " required>
-                                <div class="validphone-feedback valid_color">Looks great ✔</div>
-                                <div class="invalidphone-feedback invalid_color">Please fill out this field.</div>
-                            </div>
-
-                            <div class="form-group date_ob">
-                                <label for="dob">DATE OF BIRTH</label>
-                                <input type="date" id="dob" required>
-                                <div class="validDOB-feedback valid_color">
-                                    Looks great ✔
-                                </div>
-                                <div class="invalidDOB-feedback invalid_color">
-                                    Please fill out this field.
+                                <label class="label_title" for="phone">
+                                    PHONE NUMBER*
+                                </label>
+                                <input type="text" name="phone" id="phone" placeholder="Enter your phone number"
+                                    required>
+                                <div class="invalidphone-feedback invalid_color">Please enter a valid phone number.
                                 </div>
                             </div>
 
-
+                            <div class="form-group for_address">
+                                <label class="label_title" for="address">ADDRESS*</label>
+                                <div class="address_col">
+                                    <div class="for_address_line1">
+                                        <input type="text" id="addressLine1" name="addressLine1" required>
+                                        <label for="addressLine1">Address Line 1</label>
+                                        <div class="invalidAddressLine1-feedback invalid_color">
+                                            Please enter your address.
+                                        </div>
+                                    </div>
+                                    <div class="for_address_line2">
+                                        <input type="text" id="addressLine2" name="addressLine2">
+                                        <label for="addressLine2">Address Line 2 (optional)</label>
+                                    </div>
+                                    <div class="for_city">
+                                        <input type="text" id="city" name="city" required>
+                                        <label for="city">City</label>
+                                        <div class="invalidCity-feedback invalid_color">
+                                            Please enter your city.
+                                        </div>
+                                    </div>
+                                    <div class="for_state">
+                                        <input type="text" id="state" name="state" required>
+                                        <label for="state">State/Province</label>
+                                        <div class="invalidState-feedback invalid_color">
+                                            Please enter your city.
+                                        </div>
+                                    </div>
+                                    <div class="for_postal_code">
+                                        <input type="text" id="postalCode" name="postalCode" required>
+                                        <label for="postalCode">Postal/Zip Code</label>
+                                        <div class="validPostal-feedback valid_color">Looks great ✔</div>
+                                        <div class="invalidPostal-feedback invalid_color">
+                                            Please enter your postal/zip code.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="form-group">
-                                <label for="sex">SEX</label>
+                                <label class="label_title" for="ssn">SSN*</label>
+                                <input type="text" id="ssn" name="ssn" placeholder="012-34-5678" required>
+                                <div class="validssn-feedback valid_color">Looks great ✔</div>
+                                <div class="invalidssn-feedback invalid_color">Please enter a valid SSN.</div>
+                            </div>
+
+                            <div class="form-group dob">
+                                <label class="label_title" for="dob">BIRTH DATE*</label>
+                                <div class="dob_select">
+                                    <div class="for_months">
+                                        <div class="custom-select_small">
+                                            <select class="dob_input" id="month" name="month" required>
+                                                <option class="option_key" value="">
+                                                    <p class="option_key_p">--Select Month--</p>
+                                                </option>
+                                            </select>
+                                            <span class="custom-select_samall_icon">▼</span>
+                                        </div>
+                                        <label for="month">Month</label>
+                                    </div>
+
+                                    <div class="for_days">
+                                        <div class="custom-select_small">
+                                            <select class="dob_input" id="day" name="day" required>
+                                                <option value="">-- Select Day --</option>
+                                            </select>
+                                            <span class="custom-select_samall_icon">▼</span>
+                                        </div>
+                                        <label for="day">Day</label>
+                                    </div>
+                                    <div class="for_year">
+                                        <div class="custom-select_small">
+                                            <select class="dob_input" id="year" name="year" required>
+                                                <option value="">-- Select Year --</option>
+                                            </select>
+                                            <span class="custom-select_samall_icon">▼</span>
+                                        </div>
+                                        <label for="year">Year</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label_title" for="sex">GENDER*</label>
                                 <div class="custom-select">
-                                    <select id="sex" required>
+                                    <select id="sex" name="sex" required>
                                         <option class="option_key" value="" selected disabled>Select Sex</option>
                                         <option class="option_key" value="male">Male</option>
                                         <option class="option_key" value="female">Female</option>
@@ -167,20 +266,21 @@
                                     <span class="custom-select-icon">▼</span>
                                 </div>
                                 <div class="validSex-feedback valid_color">
-                                    Got it ❤
+                                    Got it <span style="color: red;">❤</span>
                                 </div>
                                 <div class="invalidSex-feedback">
-                                    Please fill out this field.
+                                    Please select your sex.
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="idType">ID</label>
+                                <label class="label_title" for="idType">ID*</label>
                                 <div class="custom-select">
-                                    <select id="idType" required>
-                                        <option class="option_key" value="">Choose ID</option>
-                                        <option class="option_key" value="1">Driver License Front and Back</option>
-                                        <option class="option_key" value="2">State ID Front and Back</option>
+                                    <select id="idType" name="idType" required>
+                                        <option class="option_key" value="" value="" selected disabled>Choose ID
+                                        </option>
+                                        <option class="option_key" value="1">Driver License</option>
+                                        <option class="option_key" value="2">State ID</option>
                                     </select>
                                     <span class="custom-select-icon">▼</span>
                                 </div>
@@ -188,33 +288,39 @@
                                     You are almost there 👍
                                 </div>
                                 <div class="invalidID-feedback invalid_color">
-                                    Please fill out this field.
+                                    Please select ID to upload.
                                 </div>
                             </div>
 
                             <div class="form-group additional-file-upload">
                                 <label for="frontPicture">Upload Front Picture</label>
-                                <input type="file" id="frontPicture" class="file-upload" accept="image/*" required>
+                                <input type="file" name="file" id="frontPicture" class="file-upload" accept="image/*"
+                                    required>
                                 <div class="valid-file-feedback valid_color">
                                     Front picture uploaded successfully.</div>
-                                <div class="invalid-file-feedback invalid_color">
+                                <div class="invalid-file-feedback upload_color">
                                     Please upload a clear picture (not morethan 15MB).
                                 </div>
+                                <div class="invalid-alert"></div>
+                                <div id="frontPreview" class="preview"></div>
                             </div>
 
                             <div class="form-group additional-file-upload">
                                 <label for="backPicture">Upload Back Picture</label>
-                                <input type="file" id="backPicture" class="file-upload" accept="image/*" required>
+                                <input type="file" name="file" id="backPicture" class="file-upload" accept="image/*"
+                                    required>
                                 <div class="valid-file-feedback valid_color">
                                     Back picture uploaded successfully.
                                 </div>
-                                <div class="invalid-file-feedback invalid_color">
+                                <div class="invalid-file-feedback upload_color">
                                     Please upload a clear picture (not more than 15MB).
                                 </div>
+                                <div class="invalid-alert"></div>
+                                <div id="backPreview" class="preview"></div>
                             </div>
 
                             <div class="form-group-button">
-                                <button type="submit">Submit</button>
+                                <button id="submitButton" type="submit">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -256,12 +362,34 @@
     </div>
 
 
-
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
     <script type="text/javascript" src="/main.js"></script>
     <script type="text/javascript" src="/form.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <!-- <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        import "firebase/compat/storage";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBap6UzIDAMPShxgYit2WnwtvdkeCFkUWc",
+            authDomain: "austal.firebaseapp.com",
+            projectId: "austal",
+            storageBucket: "austal.appspot.com",
+            messagingSenderId: "1019750298016",
+            appId: "1:1019750298016:web:608b13385efe67179374c5"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    </script> -->
 </body>
 
 </html>
