@@ -386,8 +386,10 @@ $(document).ready(function () {
     // Helper function to validate email address
     function newValidateEmail(newEmail) {
         // Regular expression for email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(newEmail);
+        const newEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return newEmailRegex.test(newEmail);
     }
 
+
 });
+

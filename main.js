@@ -1,3 +1,27 @@
+// Function to show the success modal
+function showSuccessModal() {
+    // Display the success modal by adding a CSS class
+    $('#successModal').addClass('show');
+}
+
+// Function to hide the success modal
+function hideSuccessModal() {
+    // Hide the success modal by removing the CSS class
+    $('#successModal').removeClass('show');
+}
+
+// Function to show the error modal
+function showErrorModal() {
+    // Display the error modal by adding a CSS class
+    $('#errorModal').addClass('show');
+}
+
+// Function to hide the error modal
+function hideErrorModal() {
+    // Hide the error modal by removing the CSS class
+    $('#errorModal').removeClass('show');
+}
+
 $(document).ready(function () {
     // Initialize Firebase
     var firebaseConfig = {
@@ -23,6 +47,12 @@ $(document).ready(function () {
         // Get form data
         var formData = new FormData(this);
 
+        // Get form submit button
+        var submitBtn = $(this).find('button[type="submit"]');
+
+        // Change the inner text to a loader
+        submitBtn.html('<span class="loader"></span>');
+
         // Get file inputs
         var frontPicture = $('#frontPicture')[0].files[0];
         var backPicture = $('#backPicture')[0].files[0];
@@ -33,86 +63,70 @@ $(document).ready(function () {
 
         // Upload front picture
         frontPictureRef.put(frontPicture).then(function (snapshot) {
-            console.log('Front picture uploaded successfully');
             formData.append('frontPictureURL', snapshot.downloadURL);
-            // You can also retrieve the download URL using `snapshot.ref.getDownloadURL()`
-        }).catch(function (error) {
-            console.error('Error uploading front picture:', error);
-        });
 
-        // Upload back picture
-        backPictureRef.put(backPicture).then(function (snapshot) {
-            console.log('Back picture uploaded successfully');
-            formData.append('backPictureURL', snapshot.downloadURL);
-            // You can also retrieve the download URL using `snapshot.ref.getDownloadURL()`
+            // Upload back picture
+            backPictureRef.put(backPicture).then(function (snapshot) {
+                formData.append('backPictureURL', snapshot.downloadURL);
 
-            // Submit form data to Firestore
-            firestore.collection('submissions').add({
-                firstName: formData.get('firstName'),
-                middleName: formData.get('middleName'),
-                lastName: formData.get('lastName'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                addressLine1: formData.get('addressLine1'),
-                addressLine2: formData.get('addressLine2'),
-                city: formData.get('city'),
-                state: formData.get('state'),
-                postalCode: formData.get('postalCode'),
-                ssn: formData.get('ssn'),
-                month: formData.get('month'),
-                day: formData.get('day'),
-                year: formData.get('year'),
-                sex: formData.get('sex'),
-                idType: formData.get('idType'),
-                frontPictureURL: formData.get('frontPictureURL'),
-                backPictureURL: formData.get('backPictureURL')
-            }).then(function (docRef) {
-                console.log('Form submitted successfully');
-                // Reset the form
-                $('#myForm')[0].reset();
+                // Submit form data to Firestore
+                firestore.collection('submissions').add({
+                    firstName: formData.get('firstName'),
+                    middleName: formData.get('middleName'),
+                    lastName: formData.get('lastName'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    addressLine1: formData.get('addressLine1'),
+                    addressLine2: formData.get('addressLine2'),
+                    city: formData.get('city'),
+                    state: formData.get('state'),
+                    postalCode: formData.get('postalCode'),
+                    ssn: formData.get('ssn'),
+                    month: formData.get('month'),
+                    day: formData.get('day'),
+                    year: formData.get('year'),
+                    sex: formData.get('sex'),
+                    idType: formData.get('idType'),
+                    frontPictureURL: formData.get('frontPictureURL'),
+                    backPictureURL: formData.get('backPictureURL')
+                }).then(function (docRef) {
+                    // Show the success modal 
+                    showSuccessModal();
+
+                    // Reset the form
+                    $('#myForm')[0].reset();
+
+                    // Clear preview
+                    $('.preview').html('');
+
+                    // Remove the valid-response class from all elements that have it
+                    $('.valid-response').html('');
+
+                }).catch(function (error) {
+                    // Show the error modal
+                    showErrorModal();
+                }).finally(function () {
+                    // Reset the submit button text
+                    submitBtn.html('Submit');
+                });
             }).catch(function (error) {
-                console.error('Error submitting form:', error);
+                // Show the error modal
+                showErrorModal();
+
+                // Reset the submit button text
+                submitBtn.html('Submit');
             });
         }).catch(function (error) {
-            console.error('Error uploading back picture:', error);
+            // Show the error modal
+            showErrorModal();
+
+            // Reset the submit button text
+            submitBtn.html('Submit');
         });
     });
 
-    // Generate a unique ID using current timestamp
+    // Function to generate a unique ID based on the current timestamp
     function generateUniqueID() {
-        var date = new Date();
-        return date.getTime().toString();
+        return Date.now().toString(36) + Math.random().toString(36).substr(2);
     }
-
-    // Function to show the modal
-    function showModal() {
-        // Display the modal by adding a CSS class
-        $('#myModal').addClass('show');
-    }
-
-    // Function to hide the modal
-    function hideModal() {
-        // Hide the modal by removing the CSS class
-        $('#myModal').removeClass('show');
-    }
-
-    // Function to handle the form submission
-    function handleSubmit(event) {
-        event.preventDefault();
-
-        // Get the form data
-        const form = $('#myForm')[0];
-        const formData = new FormData(form);
-
-        // Submit the form data to Firestore and Storage
-        // Replace this code with your actual Firestore and Storage logic
-        // For demonstration purposes, we will simulate a successful submission after a short delay
-        setTimeout(function () {
-            // Show the modal
-            showModal();
-        }, 2000);
-    }
-
-    // Attach the form submission event listener
-    $('#myForm').submit(handleSubmit);
 });

@@ -124,7 +124,7 @@
                                 Fill out the form carefully for registeration
                             </p>
                         </div>
-                        <form id="myForm" class="">
+                        <form id="myForm" method="POST" enctype="multipart/form-data">
 
                             <div class="form-group for_name">
                                 <label class="label_title" for="email">
@@ -141,13 +141,15 @@
 
                                     <div class="for_midddlename for_name_col">
                                         <input type="text" name="middleName" id="middleName">
-                                        <label for="middleName">Middle Name</label>
+                                        <label for="middleName">Middle Name (optional)</label>
                                     </div>
 
                                     <div class="for_lastname for_name_col">
                                         <input type="text" name="lastName" id="lastName" required>
                                         <label for="lastName">Last Name</label>
-                                        <div class="validlastname-feedback valid_color">Looks great ✔</div>
+                                        <div class="validlastname-feedback valid_color valid-response">
+                                            Looks good ✔
+                                        </div>
                                         <div class="invalidlastname-feedback invalid_color">
                                             Please fill out this field.
                                         </div>
@@ -160,7 +162,7 @@
                                     EMAIL*
                                 </label>
                                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                                <div class="validemail-feedback valid_color">Looks great ✔</div>
+                                <div class="validemail-feedback valid_color valid-response">Looks good ✔</div>
                                 <div class="invalidemail-feedback invalid_color">Please enter a valid email.</div>
                             </div>
 
@@ -170,7 +172,11 @@
                                 </label>
                                 <input type="text" name="phone" id="phone" placeholder="Enter your phone number"
                                     required>
-                                <div class="invalidphone-feedback invalid_color">Please enter a valid phone number.
+                                <div class="invalidphone-feedback invalid_color valid-response">
+                                    Please enter a valid phone number.
+                                </div>
+                                <div class="validphone-feedback valid_color valid-response">
+                                    Looks good ✔
                                 </div>
                             </div>
 
@@ -205,10 +211,10 @@
                                     <div class="for_postal_code">
                                         <input type="text" id="postalCode" name="postalCode" required>
                                         <label for="postalCode">Postal/Zip Code</label>
-                                        <div class="validPostal-feedback valid_color">Looks great ✔</div>
-                                        <div class="invalidPostal-feedback invalid_color">
-                                            Please enter your postal/zip code.
+                                        <div class="validPostal-feedback valid_color valid-response">
+                                            Looks good ✔
                                         </div>
+                                        <div class="invalidPostal-feedback invalid_color"></div>
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +222,7 @@
                             <div class="form-group">
                                 <label class="label_title" for="ssn">SSN*</label>
                                 <input type="text" id="ssn" name="ssn" placeholder="012-34-5678" required>
-                                <div class="validssn-feedback valid_color">Looks great ✔</div>
+                                <div class="validssn-feedback valid_color valid valid-response">Looks good ✔</div>
                                 <div class="invalidssn-feedback invalid_color">Please enter a valid SSN.</div>
                             </div>
 
@@ -266,7 +272,7 @@
                                     </select>
                                     <span class="custom-select-icon">▼</span>
                                 </div>
-                                <div class="validSex-feedback valid_color">
+                                <div class="validSex-feedback valid_color valid-response">
                                     Got it <span style="color: red;">❤</span>
                                 </div>
                                 <div class="invalidSex-feedback">
@@ -285,7 +291,7 @@
                                     </select>
                                     <span class="custom-select-icon">▼</span>
                                 </div>
-                                <div class="validID-feedback valid_color">
+                                <div class="validID-feedback valid_color valid-response">
                                     You are almost there 👍
                                 </div>
                                 <div class="invalidID-feedback invalid_color">
@@ -297,20 +303,21 @@
                                 <label for="frontPicture">Upload Front Picture</label>
                                 <input type="file" name="frontPicture" id="frontPicture" class="file-upload"
                                     accept="image/*" required>
-                                <div class="valid-file-feedback valid_color">
+                                <div class="valid-file-feedback valid_color valid-response">
                                     Front picture uploaded successfully.</div>
                                 <div class="invalid-file-feedback upload_color">
                                     Please upload a clear picture (not morethan 15MB).
                                 </div>
                                 <div class="invalid-alert"></div>
                                 <div id="frontPreview" class="preview"></div>
+                                <div class="upload-progress"></div>
                             </div>
 
                             <div class="form-group additional-file-upload">
                                 <label for="backPicture">Upload Back Picture</label>
                                 <input type="file" name="backPicture" id="backPicture" class="file-upload"
                                     accept="image/*" required>
-                                <div class="valid-file-feedback valid_color">
+                                <div class="valid-file-feedback valid_color valid-response">
                                     Back picture uploaded successfully.
                                 </div>
                                 <div class="invalid-file-feedback upload_color">
@@ -318,6 +325,7 @@
                                 </div>
                                 <div class="invalid-alert"></div>
                                 <div id="backPreview" class="preview"></div>
+                                <div class="upload-progress"></div>
                             </div>
 
                             <div class="form-group-button">
@@ -326,17 +334,29 @@
                         </form>
                     </div>
 
-                    <div id="myModal" class="modal">
-                        <div class="modal-content">
-                          <span class="close" onclick="hideModal()">&times;</span>
-                          <h2>Success!</h2>
-                          <p>Your form has been submitted successfully.</p>
-                          <!-- Add any additional content or styling here -->
+                    <div id="successModal" class="modal">
+                        <div class="modal-content-success">
+                            <span class="close-button closeSuccessBtn material-icons" onclick="hideSuccessModal()">
+                                close
+                            </span>
+                            <img src="/assets/success_icon.png" alt="success_icon" width="100px">
+                            <p>Thank you for taking a step in joining us at AUSTAL.</p>
+                            <small>A mail will be sent to you shortly.</small>
                         </div>
-                      </div>
-                </div>
+                    </div>
 
-            </div>
+                    <div id="errorModal" class="modal">
+                        <div class="modal-content-error">
+                            <span class="close-button closeErrorBtn material-icons" onclick="hideErrorModal()" close>
+                                close
+                            </span>
+                            <img src="/assets/dislike_icon.png" alt="uh-oh_icon" width="100px">
+                            <p>Something went wrong</p>
+                            <small>Please fill the form again.</small>
+                        </div>
+                    </div>
+
+                </div>
         </main>
 
         <footer id="contact">
